@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical">
+
+<Button
+    android:id="@+id/pastQuestion"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Past Question"
+    android:clickable="true"
+    android:textColor="#ff33d6ff"
+    android:width="200dp"
+    android:layout_marginTop="93dp"
+    android:layout_centerHorizontal="true"/>
+
+<Button
+    android:id="@+id/currentQuestion"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Current Question"
+    android:layout_marginTop="46dp"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/pastQuestion"
+    android:clickable="true"
+    android:textColor="#ff33d6ff"
+    android:width="200dp"
+    />
+
+</RelativeLayout>

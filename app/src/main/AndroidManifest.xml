@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.androidbegin.loginactivities.activities"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".ParseApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="Question" >
+        <activity
+            android:name=".MainActivity"
+            android:label="Question" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginSignupActivity"
+            android:label="Login or Sign Up"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".Welcome"
+            android:label="Home Page"
+            android:screenOrientation="portrait"
+
+            />
+
+        <activity
+            android:name=".ViewGroupActivity"
+            android:label="View Groups"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".AdminQuestionListingActivity"
+            android:label="View Questions"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".NormalQuestionListingActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".PastQuestionActivity"
+            android:label="Closed Questions"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".CurrentQuestionActivity"
+            android:label="Current Open Questions"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".FutureQuestionActivity"
+            android:label="Future Questions"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".CreateQuestionActivity"
+            android:label="Create a Question"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".ResponseViewActivity"
+            android:label="View Responses"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".SingleItemView"
+            android:label="Submit a Response"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".SingleItemViewPast"
+            android:label="View Responses"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".ViewGroupActivity2"
+            android:label="View Groups"
+            android:screenOrientation="portrait"
+        />
+        <activity android:name=".ViewGroupActivity3"
+            android:screenOrientation="portrait"
+        />
+
+        <activity
+            android:name=".RadioButtonTester"
+            android:label="Tester"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".CreateGroupActivity"
+            android:label="Create a new group"
+            android:screenOrientation="portrait"
+            />
+
+    </application>
+
+</manifest>

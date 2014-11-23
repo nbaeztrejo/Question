@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtwelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Welcome"
+        android:paddingTop="50dp"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/txtuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtwelcome"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:id="@+id/viewGroups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Groups"
+        android:clickable="true"
+        android:textColor="#ff33d6ff"
+        android:width="200dp"
+        android:layout_marginTop="93dp"
+        android:layout_below="@+id/txtuser"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/createGroups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Group"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/viewGroups"
+        android:layout_alignLeft="@+id/viewGroups"
+        android:clickable="true"
+        android:textColor="#ff33d6ff"
+        android:width="200dp" />
+
+    <!--<Button-->
+        <!--android:id="@+id/buttonPrompt"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="View Groups" />-->
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/LogoutBtn" />
+
+    <!--<EditText-->
+        <!--android:id="@+id/editTextResult"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" >-->
+
+    <!--</EditText>-->
+
+</RelativeLayout>
+
+
+<!-- From: file:/Users/Sara/Desktop/Question/app/src/main/res/layout/welcome.xml -->
