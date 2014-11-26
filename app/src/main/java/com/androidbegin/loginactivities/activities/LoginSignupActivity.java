@@ -55,7 +55,7 @@ public class LoginSignupActivity extends Activity {
                                     // If user exist and authenticated, send user to Welcome.class
                                     Intent intent = new Intent(
                                             LoginSignupActivity.this,
-                                            WelcomeActivity.class);
+                                            Welcome.class);
                                     startActivity(intent);
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully logged in",
@@ -80,12 +80,31 @@ public class LoginSignupActivity extends Activity {
                 passwordtxt = password.getText().toString();
 
                 // Force user to fill up the form
-                if (usernametxt.equals("") && passwordtxt.equals("")) {
+                if (usernametxt.length()==0 || passwordtxt.length() ==0) {
                     Toast.makeText(getApplicationContext(),
                             "Please complete the sign up form",
                             Toast.LENGTH_LONG).show();
 
-                } else {
+                }
+
+                else if (!isAlphaNumeric(usernametxt) || usernametxt.length() < 4
+                        || usernametxt.length() >16)  {
+
+                    Toast.makeText(getApplicationContext(),
+                            "Please Enter Valid Username",
+                            Toast.LENGTH_LONG).show();
+
+                }
+
+                else if(!isAlphaNumericSpecial(passwordtxt) || passwordtxt.length() < 4
+                        || passwordtxt.length() >16){
+
+                    Toast.makeText(getApplicationContext(),
+                            "Please Enter Valid Password",
+                            Toast.LENGTH_LONG).show();
+                }
+
+                else {
                     // Save new user data into Parse.com Data Storage
                     ParseUser user = new ParseUser();
                     user.setUsername(usernametxt);
@@ -99,7 +118,7 @@ public class LoginSignupActivity extends Activity {
                                 // Show a simple Toast message upon successful registration
                                 Intent intent = new Intent(
                                         LoginSignupActivity.this,
-                                        WelcomeActivity.class);
+                                        Welcome.class);
                                 startActivity(intent);
                                 Toast.makeText(getApplicationContext(),
                                         "Successfully signed up.",
@@ -116,4 +135,15 @@ public class LoginSignupActivity extends Activity {
             }
         });
     }
+
+    public boolean isAlphaNumeric(String s) {
+        String pattern = "^[a-zA-Z0-9]*$";
+        return (s.matches(pattern));
+    }
+
+    public boolean isAlphaNumericSpecial(String s) {
+        String pattern = "^[a-zA-Z0-9 ~ ! @ # $ % ^ & * ( ) _ - + = { } [ ] \\ | : ; \" ' < > , . ?]*$";
+        return (s.matches(pattern));
+    }
+
 }

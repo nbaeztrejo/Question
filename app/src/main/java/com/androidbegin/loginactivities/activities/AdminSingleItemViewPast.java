@@ -21,7 +21,7 @@ public class AdminSingleItemViewPast extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.singleitemview_past);
+        setContentView(R.layout.admin_singleitemview_past);
 
         Bundle b = this.getIntent().getExtras();
         String[] ansArray = b.getStringArray("ansArray");

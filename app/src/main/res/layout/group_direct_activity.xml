@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtwelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Select which groups you would like to view"
+        android:paddingTop="50dp"
+        />
+
+    <Button
+        android:id="@+id/viewAdminGroups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Groups in Which You are an Admin"
+        android:width="200dp"
+        android:clickable="true"
+        android:textColor="#ff33d6ff"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+       />
+
+    <Button
+        android:id="@+id/viewNormalGroups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Normal Groups"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/viewAdminGroups"
+        android:clickable="true"
+        android:textColor="#ff33d6ff"
+        android:width="200dp"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>

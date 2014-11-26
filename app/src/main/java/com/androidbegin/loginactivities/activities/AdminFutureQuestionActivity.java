@@ -9,7 +9,7 @@ public class AdminFutureQuestionActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.futurequestionlist);
+        setContentView(R.layout.admin_future_question_activity);
     }
 
     @Override

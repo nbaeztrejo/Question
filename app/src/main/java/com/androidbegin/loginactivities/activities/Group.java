@@ -34,7 +34,10 @@ public class Group extends ParseObject{
     }
 
     public void addQuestion(Question question){
-        add("questions", question);
+        List<Question> temp = new ArrayList();
+        temp = getList("questions");
+        temp.add(question);
+        put("questions", temp);
     }
 
     public ParseUser getAdmin(){

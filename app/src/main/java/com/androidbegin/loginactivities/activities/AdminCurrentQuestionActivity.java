@@ -46,8 +46,8 @@ public class AdminCurrentQuestionActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Get the view from listview_main.xml
-        setContentView(R.layout.listview_main);
+        // Get the view from generic_listview.xmlestion_activity.xml
+        setContentView(R.layout.generic_listview);
 
         Bundle b = this.getIntent().getExtras();
         groupID = b.getString("groupID");
@@ -94,7 +94,7 @@ public class AdminCurrentQuestionActivity extends Activity {
 
         @Override
         protected void onPostExecute(Void result) {
-            // Locate the listview in listview_main.xml
+            // Locate the listview in generic_listview.xmlestion_activity.xml
             listview = (ListView) findViewById(R.id.listview);
             // Pass the results into an ArrayAdapter
             //adapter = new ArrayAdapter<String>(CurrentQuestionActivity.this,
@@ -130,7 +130,7 @@ public class AdminCurrentQuestionActivity extends Activity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,
                                         int position, long id) {
-                    // Send single item click data to SingleItemView Class
+                    // Send single item click data to AdminSingleItemView Class
 
                     user = ParseUser.getCurrentUser();
                     //String askerID = ob.get((int) id).getString("asker");
@@ -187,7 +187,7 @@ public class AdminCurrentQuestionActivity extends Activity {
                               //RadioButtonTester.class);
                             AdminSingleItemView.class);
                     intent.putExtras(b);
-                    // Open SingleItemView.java Activity
+                    // Open AdminSingleItemView.java Activity
                     startActivity(intent);
                     finish();
                 }

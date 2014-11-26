@@ -33,7 +33,7 @@ public class AdminViewGroupActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get the view from welcome.xml
-        setContentView(R.layout.viewgroups2);
+        setContentView(R.layout.admin_view_groups_activity);
 
         //Get ListView object from xml
         listView = (ListView) findViewById(R.id.list);
@@ -71,8 +71,12 @@ public class AdminViewGroupActivity extends Activity {
                         "Group");
                 try {
                     ParseObject toBeAdded = query.get(objectID);
-                    groupObjects.add(toBeAdded);
-                    groupNames.add(toBeAdded.getString("name"));
+                    String toBeAddedAdmin = toBeAdded.getString("admin");
+                    String currentUserID = currentUser.getObjectId();
+                    if (toBeAddedAdmin.equals(currentUserID)) {
+                        groupObjects.add(toBeAdded);
+                        groupNames.add(toBeAdded.getString("name"));
+                    }
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -125,7 +129,7 @@ public class AdminViewGroupActivity extends Activity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(AdminViewGroupActivity.this,
-                WelcomeActivity.class);
+                GroupDirectActivity.class);
         startActivity(intent);
         finish();
     }

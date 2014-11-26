@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -26,7 +27,7 @@ public class AdminCreateGroupActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.creategroup);
+        setContentView(R.layout.admin_create_group_activity);
 
         // Edittext objects that users put strings in
         groupName = (EditText) findViewById(R.id.groupName);
@@ -44,19 +45,34 @@ public class AdminCreateGroupActivity extends Activity {
                 //get user name from edit text
                 //user1Name = user1.getText().toString();
 
-                Group group = new Group();
-                group.initialize(groupNameString);
+                if (groupNameString.length() != 0 && isAlphaNumeric(groupNameString)) {
+
+                    Group group = new Group();
+                    group.initialize(groupNameString);
 
 
-                ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
-                try {
-                    ParseUser temp = userQuery.getFirst();
-                    String groupID = group.getObjectId();
+                    ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
+                    try {
+                        ParseUser temp = userQuery.getFirst();
+                        String groupID = group.getObjectId();
 
-                    ParseUser.getCurrentUser().add("groups", groupID);
-                    ParseUser.getCurrentUser().saveInBackground();
-                } catch (ParseException e) {
+                        ParseUser.getCurrentUser().add("groups", groupID);
+                        ParseUser.getCurrentUser().saveInBackground();
+                    } catch (ParseException e) {
 
+                    }
+
+                    Intent intent = new Intent(
+                            AdminCreateGroupActivity.this,
+                            AdminViewGroupActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+
+                else {
+                    Toast.makeText(getApplicationContext(),
+                            "Please Enter Valid Group Title", Toast.LENGTH_LONG).show();
                 }
 
                 /*ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
@@ -92,11 +108,7 @@ public class AdminCreateGroupActivity extends Activity {
                 //    e.printStackTrace();
                 //}
 
-                Intent intent = new Intent(
-                        AdminCreateGroupActivity.this,
-                        WelcomeActivity.class);
-                startActivity(intent);
-                finish();
+
             }
         });
     }
@@ -104,9 +116,19 @@ public class AdminCreateGroupActivity extends Activity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(AdminCreateGroupActivity.this,
-                AdminViewGroupActivity.class);
+                Welcome.class);
         startActivity(intent);
         finish();
     }
 
+
+    public boolean isAlphaNumeric(String s){
+        String pattern= "^[a-zA-Z0-9]*$";
+        if(s.matches(pattern)){
+            return true;
+        }
+        return false;
+    }
+
 }
+

@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/questionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColorHint="#ff33d6ff"
+                android:layout_marginTop="20dp"
+                android:singleLine="true"
+                android:layout_marginLeft="20dp"
+                android:hint="Question Title" />
+
+            <EditText
+                android:id="@+id/choice1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:singleLine="true"
+                android:hint="Choice 1" />
+
+            <EditText
+                android:id="@+id/choice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:singleLine="true"
+                android:hint="Choice 2" />
+
+            <EditText
+                android:id="@+id/choice3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:singleLine="true"
+                android:hint="Choice 3" />
+
+            <EditText
+                android:id="@+id/choice4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:singleLine="true"
+                android:hint="Choice 4" />
+
+            <Button
+                android:id="@+id/saveQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Question"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="100dp"
+                android:clickable="true"
+                android:textColor="#ff33d6ff"
+                android:width="180dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

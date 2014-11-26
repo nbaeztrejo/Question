@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
             ParseUser currentUser = ParseUser.getCurrentUser();
             if (currentUser != null) {
                 // Send logged in users to Welcome.class
-                Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+                Intent intent = new Intent(MainActivity.this, Welcome.class);
                 startActivity(intent);
                 finish();
             } else {

@@ -9,28 +9,53 @@
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
-                name="adminquestionlist"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\adminquestionlist.xml"
+                name="admin_create_group_activity"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\admin_create_group_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                name="creategroup"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\creategroup.xml"
+                name="admin_create_question_activity"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\admin_create_question_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                name="creategroups"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\creategroups.xml"
+                name="admin_future_question_activity"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\admin_future_question_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                name="createquestion"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\createquestion.xml"
+                name="admin_past_question_activity"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\admin_past_question_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                name="futurequestionlist"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\futurequestionlist.xml"
+                name="admin_question_listing_activity"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\admin_question_listing_activity.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="admin_singleitemview"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\admin_singleitemview.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="admin_singleitemview_past"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\admin_singleitemview_past.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="admin_view_groups_activity"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\admin_view_groups_activity.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="generic_listview"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\generic_listview.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="group_direct_activity"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\group_direct_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -39,23 +64,23 @@
                 qualifiers=""
                 type="layout" />
             <file
-                name="listview_main"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\listview_main.xml"
-                qualifiers=""
-                type="layout" />
-            <file
                 name="loginsignup"
                 path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\loginsignup.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                name="normalquestionlist"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\normalquestionlist.xml"
+                name="normal_question_listing_activity"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\normal_question_listing_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                name="pastquestionlist"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\pastquestionlist.xml"
+                name="normal_singleitemview"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\normal_singleitemview.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="normal_singleitemview_past"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\normal_singleitemview_past.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -71,26 +96,6 @@
             <file
                 name="saver"
                 path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\saver.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="singleitemview"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\singleitemview.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="singleitemview_past"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\singleitemview_past.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="viewgroups"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\viewgroups.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="viewgroups2"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\viewgroups2.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -178,8 +183,8 @@
                 </dimen>
             </file>
             <file
-                name="adduser"
-                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\adduser.xml"
+                name="admin_add_user_activity"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\admin_add_user_activity.xml"
                 qualifiers=""
                 type="layout" />
         </source>

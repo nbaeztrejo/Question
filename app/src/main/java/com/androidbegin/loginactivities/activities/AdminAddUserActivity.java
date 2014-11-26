@@ -28,17 +28,20 @@ public class AdminAddUserActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.adduser);
+        setContentView(R.layout.admin_add_user_activity);
 
+        // Asks the user for an input (username)
         userEditText = (EditText) findViewById(R.id.userText);
-        //button and listener
+        // Button to confirm user information
         userAddButton = (Button) findViewById(R.id.saveUser);
+        // Listener
         userAddButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 handleUsername();
             }
         });
 
+        // Pulls relevant information from the bundle
         Bundle b = this.getIntent().getExtras();
         groupID = b.getString("groupID");
 
@@ -50,8 +53,7 @@ public class AdminAddUserActivity extends Activity {
 
         String username = userEditText.getText().toString().trim();
 
-        // userExists = false;
-        // Defined Array values to show in ListView
+        // Begin various checks of the input
         ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.whereEqualTo("username", username);
         try {
@@ -63,13 +65,17 @@ public class AdminAddUserActivity extends Activity {
             userExists = false;
         }
 
+        // Pre-sets the error to be false
         boolean validationError = false;
         StringBuilder validationErrorMessage = new StringBuilder("");
+
+        // Checks if the input is of length 0
         if (username.length() == 0) {
             validationError = true;
             validationErrorMessage.append(getString(R.string.error_blank_username));
         }
 
+        // Checks if the input is a valid user
         else if (!userExists && username.length() > 0) {
             if (validationError) {
                 validationErrorMessage.append(getString(R.string.error_join));
@@ -86,13 +92,13 @@ public class AdminAddUserActivity extends Activity {
             return;
         }
 
-        //update User info
+        // Update user info
         final ProgressDialog dialog = new ProgressDialog(AdminAddUserActivity.this);
         dialog.setMessage("Adding user to group...");
         dialog.show();
 
 
-// Retrieve the object by id
+        // Retrieve the object by id
         //query.getFirst().getList("contacts");
 
         /*query.getInBackground(userObjectID, new GetCallback<ParseUser>() {
@@ -104,7 +110,8 @@ public class AdminAddUserActivity extends Activity {
             }
         });*/
 
-        //add other user to contacts so you can creep
+        // Add userID to Group ParseObject subclass
+        // Add groupID to ParseUser group array <---- NEEDS A WORKAROUND, NO ACL PERMISSION
         ParseQuery<Group> groupQuery = Group.getQuery();
         try {
             ParseUser user = query.get(userObjectID);
@@ -127,19 +134,6 @@ public class AdminAddUserActivity extends Activity {
         startActivity(intent);
         finish();
     }
-
-    /*public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-
-        menu.findItem(R.id.action_settings).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem item) {
-                startActivity(new Intent(AddContactActivity.this, SettingsActivity.class));
-                return true;
-            }
-        });
-        return true;
-    }*/
 
     @Override
     public void onBackPressed() {

@@ -14,7 +14,7 @@ public class AdminQuestionListingActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.adminquestionlist);
+        setContentView(R.layout.admin_question_listing_activity);
 
         Bundle b = this.getIntent().getExtras();
         groupID = b.getString("groupID");
@@ -23,19 +23,15 @@ public class AdminQuestionListingActivity extends Activity {
         Button pastQuestion = (Button) findViewById(R.id.pastQuestion);
 
         //Past Question Listener
-        pastQuestion.setOnClickListener(new View.OnClickListener(){
+        pastQuestion.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick (View arg0){
+            public void onClick(View arg0) {
                 Bundle b = new Bundle();
                 b.putString("groupID", groupID);
-
                 Intent intent = new Intent(AdminQuestionListingActivity.this,
                         AdminPastQuestionActivity.class);
-
                 intent.putExtras(b);
-
                 startActivity(intent);
-
                 finish();
             }
         });
@@ -44,51 +40,44 @@ public class AdminQuestionListingActivity extends Activity {
         Button currentQuestion = (Button) findViewById(R.id.currentQuestion);
 
         //Current Question Listener
-        currentQuestion.setOnClickListener(new View.OnClickListener(){
+        currentQuestion.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick (View arg0){
+            public void onClick(View arg0) {
                 Bundle b = new Bundle();
                 b.putString("groupID", groupID);
-
                 Intent intent = new Intent(AdminQuestionListingActivity.this,
                         AdminCurrentQuestionActivity.class);
-
                 intent.putExtras(b);
-
                 startActivity(intent);
-
                 finish();
 
             }
         });
 
         //Future Question Button
-        /*Button futureQuestion = (Button) findViewById(R.id.futureQuestion);
+        Button futureQuestion = (Button) findViewById(R.id.futureQuestion);
 
         //Future Question Listener
-        futureQuestion.setOnClickListener(new View.OnClickListener(){
+        futureQuestion.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick (View arg0){
+            public void onClick(View arg0) {
                 Bundle b = new Bundle();
-                b.putString("groupID", groupObjectID);
-
+                b.putString("groupID", groupID);
                 Intent intent = new Intent(AdminQuestionListingActivity.this,
-                        FutureQuestionActivity.class);
-
+                        AdminFutureQuestionActivity.class);
                 intent.putExtras(b);
-
                 startActivity(intent);
             }
-        });*/
+        });
 
 
         //Create Question Button
         Button createQuestion = (Button) findViewById(R.id.createQuestion);
 
         //Create Question Listener
-        createQuestion.setOnClickListener(new View.OnClickListener(){
+        createQuestion.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick (View arg0){
+            public void onClick(View arg0) {
                 Bundle b = new Bundle();
                 b.putString("groupID", groupID);
                 Intent intent = new Intent(AdminQuestionListingActivity.this,
@@ -96,16 +85,18 @@ public class AdminQuestionListingActivity extends Activity {
                 intent.putExtras(b);
                 startActivity(intent);
                 finish();
+
             }
         });
+
 
         //Add User Button
         Button addUser = (Button) findViewById(R.id.addUser);
 
         //Add User Listener
-        addUser.setOnClickListener(new View.OnClickListener(){
+        addUser.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick (View arg0){
+            public void onClick(View arg0) {
                 Bundle b = new Bundle();
                 b.putString("groupID", groupID);
                 Intent intent = new Intent(AdminQuestionListingActivity.this,
@@ -125,7 +116,7 @@ public class AdminQuestionListingActivity extends Activity {
         Bundle b = new Bundle();
         b.putString("groupID", groupID);
         Intent intent = new Intent(AdminQuestionListingActivity.this,
-                WelcomeActivity.class);
+                AdminViewGroupActivity.class);
         intent.putExtras(b);
         startActivity(intent);
         finish();

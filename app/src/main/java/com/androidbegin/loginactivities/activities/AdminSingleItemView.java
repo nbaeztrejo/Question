@@ -38,7 +38,7 @@ public class AdminSingleItemView extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.singleitemview);
+        setContentView(R.layout.admin_singleitemview);
 
         Bundle b = this.getIntent().getExtras();
         String[] array = b.getStringArray("ansArray");

@@ -30,82 +30,89 @@
             />
 
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".Welcome"
             android:label="Home Page"
-            android:screenOrientation="portrait"
-
-            />
-
-        <activity
-            android:name=".AdminViewGroupActivity"
-            android:label="View Groups"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".AdminQuestionListingActivity"
-            android:label="View Questions"
-            android:screenOrientation="portrait"
-            />
+            android:label="View Questions as Admin"
+        />
 
-        <activity android:name=".NormalQuestionListingActivity"
+        <activity
+            android:name=".NormalQuestionListingActivity"
+            android:label="View Questions"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".AdminPastQuestionActivity"
+            android:label="Closed Questions (Admin)"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".NormalPastQuestionActivity"
             android:label="Closed Questions"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".AdminCurrentQuestionActivity"
+            android:label="Current Open Questions (Admin)"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".NormalCurrentQuestionActivity"
             android:label="Current Open Questions"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".AdminFutureQuestionActivity"
-            android:label="Future Questions"
+            android:label="Future Questions (Admin)"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".AdminCreateQuestionActivity"
-            android:label="Create a Question"
-            android:screenOrientation="portrait"
-            />
-
-        <activity
-            android:name=".AdminResponseViewActivity"
-            android:label="View Responses"
+            android:label="Create a Question (Admin)"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".AdminSingleItemView"
+            android:label="Submit a Response or Close the Question"
+            />
+
+        <activity
+            android:name=".NormalSingleItemView"
             android:label="Submit a Response"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".AdminSingleItemViewPast"
+            android:label="View Responses (Admin)"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".NormalSingleItemViewPast"
             android:label="View Responses"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".AdminViewGroupActivity"
-            android:label="View Groups"
-            android:screenOrientation="portrait"
-        />
-        <activity android:name=".ViewGroupActivity3"
+            android:label="View Groups (Admin)"
             android:screenOrientation="portrait"
         />
 
         <activity
-            android:name=".RadioButtonTester"
-            android:label="Tester"
+            android:name=".NormalViewGroupActivity"
+            android:label="View Normal Groups"
             android:screenOrientation="portrait"
             />
 
@@ -115,10 +122,18 @@
             android:screenOrientation="portrait"
             />
 
-        <activity android:name=".AdminAddUserActivity"
-            android:label="Add a user to a group"
+        <activity
+            android:name=".GroupDirectActivity"
+            android:label="View Groups"
             android:screenOrientation="portrait"
             />
+
+        <activity
+            android:name=".AdminAddUserActivity"
+            android:label="Add a new user to a group"
+            android:screenOrientation="portrait"
+            />
+
 
     </application>
 
