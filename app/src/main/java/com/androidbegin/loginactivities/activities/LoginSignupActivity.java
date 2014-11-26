@@ -55,7 +55,7 @@ public class LoginSignupActivity extends Activity {
                                     // If user exist and authenticated, send user to Welcome.class
                                     Intent intent = new Intent(
                                             LoginSignupActivity.this,
-                                            Welcome.class);
+                                            WelcomeActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully logged in",
@@ -99,7 +99,7 @@ public class LoginSignupActivity extends Activity {
                                 // Show a simple Toast message upon successful registration
                                 Intent intent = new Intent(
                                         LoginSignupActivity.this,
-                                        Welcome.class);
+                                        WelcomeActivity.class);
                                 startActivity(intent);
                                 Toast.makeText(getApplicationContext(),
                                         "Successfully signed up.",

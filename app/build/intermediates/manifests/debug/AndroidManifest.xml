@@ -28,11 +28,11 @@
             android:label="Login or Sign Up"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.Welcome"
+            android:name="com.androidbegin.loginactivities.activities.WelcomeActivity"
             android:label="Home Page"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.ViewGroupActivity"
+            android:name="com.androidbegin.loginactivities.activities.AdminViewGroupActivity"
             android:label="View Groups"
             android:screenOrientation="portrait" />
         <activity
@@ -43,35 +43,35 @@
             android:name="com.androidbegin.loginactivities.activities.NormalQuestionListingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.PastQuestionActivity"
+            android:name="com.androidbegin.loginactivities.activities.AdminPastQuestionActivity"
             android:label="Closed Questions"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.CurrentQuestionActivity"
+            android:name="com.androidbegin.loginactivities.activities.AdminCurrentQuestionActivity"
             android:label="Current Open Questions"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.FutureQuestionActivity"
+            android:name="com.androidbegin.loginactivities.activities.AdminFutureQuestionActivity"
             android:label="Future Questions"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.CreateQuestionActivity"
+            android:name="com.androidbegin.loginactivities.activities.AdminCreateQuestionActivity"
             android:label="Create a Question"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.ResponseViewActivity"
+            android:name="com.androidbegin.loginactivities.activities.AdminResponseViewActivity"
             android:label="View Responses"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.SingleItemView"
+            android:name="com.androidbegin.loginactivities.activities.AdminSingleItemView"
             android:label="Submit a Response"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.SingleItemViewPast"
+            android:name="com.androidbegin.loginactivities.activities.AdminSingleItemViewPast"
             android:label="View Responses"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.ViewGroupActivity2"
+            android:name="com.androidbegin.loginactivities.activities.AdminViewGroupActivity"
             android:label="View Groups"
             android:screenOrientation="portrait" />
         <activity
@@ -82,8 +82,12 @@
             android:label="Tester"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.CreateGroupActivity"
+            android:name="com.androidbegin.loginactivities.activities.AdminCreateGroupActivity"
             android:label="Create a new group"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.androidbegin.loginactivities.activities.AdminAddUserActivity"
+            android:label="Add a user to a group"
             android:screenOrientation="portrait" />
     </application>
 

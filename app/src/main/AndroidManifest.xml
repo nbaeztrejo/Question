@@ -30,14 +30,14 @@
             />
 
         <activity
-            android:name=".Welcome"
+            android:name=".WelcomeActivity"
             android:label="Home Page"
             android:screenOrientation="portrait"
 
             />
 
         <activity
-            android:name=".ViewGroupActivity"
+            android:name=".AdminViewGroupActivity"
             android:label="View Groups"
             android:screenOrientation="portrait"
             />
@@ -53,49 +53,49 @@
             />
 
         <activity
-            android:name=".PastQuestionActivity"
+            android:name=".AdminPastQuestionActivity"
             android:label="Closed Questions"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".CurrentQuestionActivity"
+            android:name=".AdminCurrentQuestionActivity"
             android:label="Current Open Questions"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".FutureQuestionActivity"
+            android:name=".AdminFutureQuestionActivity"
             android:label="Future Questions"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".CreateQuestionActivity"
+            android:name=".AdminCreateQuestionActivity"
             android:label="Create a Question"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".ResponseViewActivity"
+            android:name=".AdminResponseViewActivity"
             android:label="View Responses"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".SingleItemView"
+            android:name=".AdminSingleItemView"
             android:label="Submit a Response"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".SingleItemViewPast"
+            android:name=".AdminSingleItemViewPast"
             android:label="View Responses"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".ViewGroupActivity2"
+            android:name=".AdminViewGroupActivity"
             android:label="View Groups"
             android:screenOrientation="portrait"
         />
@@ -110,8 +110,13 @@
             />
 
         <activity
-            android:name=".CreateGroupActivity"
+            android:name=".AdminCreateGroupActivity"
             android:label="Create a new group"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".AdminAddUserActivity"
+            android:label="Add a user to a group"
             android:screenOrientation="portrait"
             />
 

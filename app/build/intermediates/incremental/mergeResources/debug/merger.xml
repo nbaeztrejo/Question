@@ -2,84 +2,109 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/Users/Sara/Desktop/Question/app/src/main/res" >
+        <source path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res" >
             <file
                 name="ic_launcher"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/drawable-hdpi/ic_launcher.png"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\drawable-hdpi\ic_launcher.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="adminquestionlist"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/adminquestionlist.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\adminquestionlist.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="creategroup"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\creategroup.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="creategroups"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/creategroups.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\creategroups.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="createquestion"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/createquestion.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\createquestion.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="futurequestionlist"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/futurequestionlist.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\futurequestionlist.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="listview_item"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/listview_item.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\listview_item.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="listview_main"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/listview_main.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\listview_main.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="loginsignup"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/loginsignup.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\loginsignup.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="normalquestionlist"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/normalquestionlist.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\normalquestionlist.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="pastquestionlist"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/pastquestionlist.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\pastquestionlist.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="radiobuttonsingleitemview"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\radiobuttonsingleitemview.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="responseview"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/responseview.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\responseview.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="saver"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\saver.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="singleitemview"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/singleitemview.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\singleitemview.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="singleitemview_past"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\singleitemview_past.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="viewgroups"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/viewgroups.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\viewgroups.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="viewgroups2"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\viewgroups2.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="welcome"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/welcome.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\welcome.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="create_question"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/menu/create_question.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\menu\create_question.xml"
                 qualifiers=""
                 type="menu" />
             <file
-                path="/Users/Sara/Desktop/Question/app/src/main/res/values/dimens.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\values\dimens.xml"
                 qualifiers="" >
                 <dimen name="activity_horizontal_margin" >16dp
                 </dimen>
@@ -87,8 +112,10 @@
                 </dimen>
             </file>
             <file
-                path="/Users/Sara/Desktop/Question/app/src/main/res/values/strings.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\values\strings.xml"
                 qualifiers="" >
+                <string name="error_join" >, and
+                </string>
                 <string name="SignupBtn" >Sign Up
                 </string>
                 <string name="action_settings" >Settings
@@ -100,6 +127,8 @@
                 <string name="Welcome" >Welcome!
                 </string>
                 <string name="LoginBtn" >Login
+                </string>
+                <string name="error_blank_username" >Enter a username
                 </string>
                 <string name="title_activity_response_view" >ResponseViewActivity
                 </string>
@@ -119,13 +148,15 @@
                 </string>
                 <string name="Password" >Password
                 </string>
+                <string name="title_activity_admin_question_listing" >AdminQuestionListingActivity
+                </string>
                 <string name="page_name" >View questions
                 </string>
-                <string name="title_activity_admin_question_listing" >AdminQuestionListingActivity
+                <string name="hello_world" >Hello world!
                 </string>
                 <string name="title_activity_create_question" >CreateQuestionActivity
                 </string>
-                <string name="hello_world" >Hello world!
+                <string name="error_end" >.
                 </string>
                 <string name="LogoutBtn" >Log Out
                 </string>
@@ -133,7 +164,7 @@
                 </string>
             </file>
             <file
-                path="/Users/Sara/Desktop/Question/app/src/main/res/values/styles.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\values\styles.xml"
                 qualifiers="" >
 
                 <style
@@ -141,42 +172,22 @@
                     parent="android:Theme.Light" />
             </file>
             <file
-                path="/Users/Sara/Desktop/Question/app/src/main/res/values-w820dp/dimens.xml"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\values-w820dp\dimens.xml"
                 qualifiers="w820dp-v13" >
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
             <file
-                name="singleitemview_past"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/singleitemview_past.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="viewgroups2"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/viewgroups2.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="radiobuttonsingleitemview"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/radiobuttonsingleitemview.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="creategroup"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/creategroup.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="saver"
-                path="/Users/Sara/Desktop/Question/app/src/main/res/layout/saver.xml"
+                name="adduser"
+                path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\main\res\layout\adduser.xml"
                 qualifiers=""
                 type="layout" />
         </source>
-        <source path="/Users/Sara/Desktop/Question/app/build/generated/res/rs/debug" />
-        <source path="/Users/Sara/Desktop/Question/app/build/generated/res/generated/debug" />
+        <source path="C:\Users\Kevin\AndroidStudioProjects\Question\app\build\generated\res\rs\debug" />
+        <source path="C:\Users\Kevin\AndroidStudioProjects\Question\app\build\generated\res\generated\debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/Sara/Desktop/Question/app/src/debug/res" />
+        <source path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\debug\res" />
     </dataSet>
 
 </merger>

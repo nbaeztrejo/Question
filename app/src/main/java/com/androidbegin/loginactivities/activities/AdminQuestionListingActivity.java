@@ -30,7 +30,7 @@ public class AdminQuestionListingActivity extends Activity {
                 b.putString("groupID", groupID);
 
                 Intent intent = new Intent(AdminQuestionListingActivity.this,
-                        PastQuestionActivity.class);
+                        AdminPastQuestionActivity.class);
 
                 intent.putExtras(b);
 
@@ -51,7 +51,7 @@ public class AdminQuestionListingActivity extends Activity {
                 b.putString("groupID", groupID);
 
                 Intent intent = new Intent(AdminQuestionListingActivity.this,
-                        CurrentQuestionActivity.class);
+                        AdminCurrentQuestionActivity.class);
 
                 intent.putExtras(b);
 
@@ -91,18 +91,32 @@ public class AdminQuestionListingActivity extends Activity {
             public void onClick (View arg0){
                 Bundle b = new Bundle();
                 b.putString("groupID", groupID);
-
                 Intent intent = new Intent(AdminQuestionListingActivity.this,
-                        CreateQuestionActivity.class);
-
+                        AdminCreateQuestionActivity.class);
                 intent.putExtras(b);
-
                 startActivity(intent);
+                finish();
+            }
+        });
 
+        //Add User Button
+        Button addUser = (Button) findViewById(R.id.addUser);
+
+        //Add User Listener
+        addUser.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick (View arg0){
+                Bundle b = new Bundle();
+                b.putString("groupID", groupID);
+                Intent intent = new Intent(AdminQuestionListingActivity.this,
+                        AdminAddUserActivity.class);
+                intent.putExtras(b);
+                startActivity(intent);
                 finish();
 
             }
         });
+
     }
 
     @Override
@@ -111,7 +125,7 @@ public class AdminQuestionListingActivity extends Activity {
         Bundle b = new Bundle();
         b.putString("groupID", groupID);
         Intent intent = new Intent(AdminQuestionListingActivity.this,
-                Welcome.class);
+                WelcomeActivity.class);
         intent.putExtras(b);
         startActivity(intent);
         finish();

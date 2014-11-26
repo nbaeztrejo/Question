@@ -46,4 +46,4 @@
         android:layout_below="@+id/login"
         android:text="@string/SignupBtn" />
 
-</RelativeLayout><!-- From: file:/Users/Sara/Desktop/Question/app/src/main/res/layout/loginsignup.xml -->
+</RelativeLayout><!-- From: file:/C:/Users/Kevin/AndroidStudioProjects/Question/app/src/main/res/layout/loginsignup.xml -->
