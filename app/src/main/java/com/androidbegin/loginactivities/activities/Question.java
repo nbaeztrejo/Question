@@ -29,10 +29,14 @@ public class Question extends ParseObject {
         }
         put("responseCollection", responseCollection);
 
+        // Array containing users that have responded to the question
+        // Also contains the question ASKER (2nd line, do not comment out)
         List<String> userResponses = new ArrayList();
-        //userResponses.add(ParseUser.getCurrentUser().getObjectId());
+        userResponses.add(ParseUser.getCurrentUser().getObjectId());
         put("userResponses", userResponses);
 
+        // Array containing the response each user has selected
+        // Also contains '-1' to represent the question ASKER (2nd line, do not comment out)
         ArrayList<Integer> userChoices = new ArrayList();
         userChoices.add(-1);
         put("userChoices", userChoices);
