@@ -88,11 +88,11 @@ public class AdminViewGroupActivity extends Activity {
 
             mProgressDialog.dismiss();
 
-            ArrayAdapter<String> adatper;
-            adatper = new ArrayAdapter<String>(AdminViewGroupActivity.this,
+            ArrayAdapter<String> adapter;
+            adapter = new ArrayAdapter<String>(AdminViewGroupActivity.this,
                     R.layout.listview_item,groupNames);
             //Assign adapter to ListView
-            listView.setAdapter(adatper);
+            listView.setAdapter(adapter);
 
             // ListView Item Click Listener
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -109,11 +109,11 @@ public class AdminViewGroupActivity extends Activity {
 
                     //get stuff from previous page using Bundle
                     Bundle b = new Bundle();
-
                     b.putString("groupID", groupIDs.get(itemPosition));
+                    b.putBoolean("isAdmin", true);
 
                     Intent i = new Intent(AdminViewGroupActivity.this,
-                            AdminQuestionListingActivity.class);
+                            GroupViewActivity.class);
                     i.putExtras(b);
 
                     // Open AdminQuestionListingActivity.java Activity

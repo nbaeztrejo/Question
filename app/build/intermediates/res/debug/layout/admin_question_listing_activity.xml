@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Closed Questions"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="93dp"
         android:layout_centerHorizontal="true"
         android:clickable="true"
         android:textColor="#ff33d6ff"
@@ -55,7 +55,7 @@
         android:width="120dp"
         />
 
-    <Button
+    <!--<Button
         android:id="@+id/addUser"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
         android:clickable="true"
         android:textColor="#ff33d6ff"
         android:width="120dp"
-        />
+        /> -->
 
 </RelativeLayout>
 <!-- From: file:/C:/Users/Kevin/AndroidStudioProjects/Question/app/src/main/res/layout/admin_question_listing_activity.xml -->

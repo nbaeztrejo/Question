@@ -19,6 +19,7 @@ public class Welcome extends Activity {
     Button logout;
     Button createGroups;
     Button viewGroups;
+    Button joinGroup;
     //    private EditText result;
     final Context context = this;
     //    private Button button; //delete
@@ -48,6 +49,7 @@ public class Welcome extends Activity {
         logout = (Button) findViewById(R.id.logout);
         viewGroups = (Button) findViewById(R.id.viewGroups);
         createGroups = (Button) findViewById(R.id.createGroups);
+        joinGroup = (Button) findViewById(R.id.joinGroup);
 //        result = (EditText) findViewById(R.id.editTextResult);
 //        button = (Button) findViewById(R.id.buttonPrompt);
 
@@ -79,12 +81,23 @@ public class Welcome extends Activity {
             }
         });
 
-
+        // createGroups Button Click Listener
         createGroups.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Welcome.this,
                     AdminCreateGroupActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // joinGroup Button Click Listener
+        joinGroup.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Welcome.this,
+                        AddGroupActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -29,7 +29,7 @@
         android:clickable="true"
         android:textColor="#ff33d6ff"
         android:width="200dp"
-        android:layout_marginTop="93dp"
+        android:layout_marginTop="53dp"
         android:layout_below="@+id/txtuser"
         android:layout_centerHorizontal="true" />
 
@@ -41,6 +41,18 @@
         android:layout_marginTop="46dp"
         android:layout_below="@+id/viewGroups"
         android:layout_alignLeft="@+id/viewGroups"
+        android:clickable="true"
+        android:textColor="#ff33d6ff"
+        android:width="200dp" />
+
+    <Button
+        android:id="@+id/joinGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join Group"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/createGroups"
+        android:layout_alignLeft="@+id/createGroups"
         android:clickable="true"
         android:textColor="#ff33d6ff"
         android:width="200dp" />

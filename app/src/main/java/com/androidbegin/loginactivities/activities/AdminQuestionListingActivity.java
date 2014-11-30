@@ -90,7 +90,7 @@ public class AdminQuestionListingActivity extends Activity {
         });
 
 
-        //Add User Button
+        /*//Add User Button
         Button addUser = (Button) findViewById(R.id.addUser);
 
         //Add User Listener
@@ -100,13 +100,13 @@ public class AdminQuestionListingActivity extends Activity {
                 Bundle b = new Bundle();
                 b.putString("groupID", groupID);
                 Intent intent = new Intent(AdminQuestionListingActivity.this,
-                        AdminAddUserActivity.class);
+                        AddGroupActivity.class);
                 intent.putExtras(b);
                 startActivity(intent);
                 finish();
 
             }
-        });
+        });*/
 
     }
 

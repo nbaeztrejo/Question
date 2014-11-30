@@ -2,19 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".AddGroupActivity">
 
     <EditText
-        android:id="@+id/userText"
+        android:id="@+id/groupText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColorHint="#ff33d6ff"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-        android:hint="Add User" />
+        android:hint="Add Group" />
 
     <Button
-        android:id="@+id/saveUser"
+        android:id="@+id/saveGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm"

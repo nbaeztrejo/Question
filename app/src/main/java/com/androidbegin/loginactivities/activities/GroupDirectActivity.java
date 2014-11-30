@@ -23,6 +23,9 @@ public class GroupDirectActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(GroupDirectActivity.this,
                         AdminViewGroupActivity.class);
+                Bundle b = new Bundle();
+                b.putBoolean("isAdmin", true);
+                intent.putExtras(b);
                 startActivity(intent);
                 finish();
             }
@@ -35,6 +38,9 @@ public class GroupDirectActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(GroupDirectActivity.this,
                         NormalViewGroupActivity.class);
+                Bundle b = new Bundle();
+                b.putBoolean("isAdmin", false);
+                intent.putExtras(b);
                 startActivity(intent);
                 finish();
             }
