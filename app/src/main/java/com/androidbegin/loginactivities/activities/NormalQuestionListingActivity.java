@@ -70,7 +70,7 @@ public class NormalQuestionListingActivity extends Activity {
         Bundle b = new Bundle();
         b.putString("groupID", groupID);
         Intent intent = new Intent(NormalQuestionListingActivity.this,
-                NormalViewGroupActivity.class);
+                GroupViewActivity.class);
         intent.putExtras(b);
         startActivity(intent);
         finish();

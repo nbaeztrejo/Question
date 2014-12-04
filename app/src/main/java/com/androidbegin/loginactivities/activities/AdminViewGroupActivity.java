@@ -107,7 +107,7 @@ public class AdminViewGroupActivity extends Activity {
                     // ListView Clicked item value
                     String  itemValue    = (String) listView.getItemAtPosition(position);
 
-                    //get stuff from previous page using Bundle
+                    // Get stuff from previous page using Bundle
                     Bundle b = new Bundle();
                     b.putString("groupID", groupIDs.get(itemPosition));
                     b.putBoolean("isAdmin", true);

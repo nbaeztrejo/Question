@@ -116,7 +116,7 @@ public class AdminQuestionListingActivity extends Activity {
         Bundle b = new Bundle();
         b.putString("groupID", groupID);
         Intent intent = new Intent(AdminQuestionListingActivity.this,
-                AdminViewGroupActivity.class);
+                GroupViewActivity.class);
         intent.putExtras(b);
         startActivity(intent);
         finish();

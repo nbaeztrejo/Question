@@ -35,6 +35,7 @@ public class SeeUsersActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // Get the view from welcome.xml
         setContentView(R.layout.admin_view_groups_activity);
 
@@ -46,6 +47,7 @@ public class SeeUsersActivity extends Activity {
         groupID = b.getString("groupID");
         usernames = new ArrayList<String>();
 
+        mProgressDialog = null;
         new RemoteDataTask().execute();
 
     }
@@ -63,37 +65,41 @@ public class SeeUsersActivity extends Activity {
             mProgressDialog.setMessage("Loading...");
             mProgressDialog.setIndeterminate(false);
             // Show progressdialog
-            mProgressDialog.show();
+            //mProgressDialog.show();
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            ParseQuery<Group> query = Group.getQuery();
+            /*ParseQuery<Group> query = Group.getQuery();
             query.whereEqualTo("objectID", groupID);
             try {
                 group = query.get(groupID);
                 users = group.getUsers();
-                userIDs = group.getList("users");
-                for (int i = 0; i < userIDs.size(); i++) {
-                    ParseObject toBeAdded = query.get(userIDs.get(i));
-                    usernames.add(toBeAdded.getString("username"));
+                //userIDs = group.getList("users");
+                for (int i = 0; i < users.size(); i++) {
+                    //ParseObject toBeAdded = query.get(userIDs.get(i));
+                    //usernames.add(toBeAdded.getString("username"));
+                    String toBeAdded = users.get(i).getUsername();
+                    usernames.add(toBeAdded);
                 }
             } catch (ParseException e) {
                 e.printStackTrace();
-            }
+            }*/
+            usernames.add("user1");
+            usernames.add("user2");
             return null;
         }
         @Override
         protected void onPostExecute(Void result) {
 
+            mProgressDialog.dismiss();
+
             ArrayAdapter<String> adapter;
             adapter = new ArrayAdapter<String>(SeeUsersActivity.this,
-                    R.layout.listview_item, userIDs);
+                    R.layout.listview_item, usernames);
 
             //Assign adapter to ListView
             listView.setAdapter(adapter);
-
-            mProgressDialog.dismiss();
 
             // ListView Item Click Listener
             /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -128,8 +134,11 @@ public class SeeUsersActivity extends Activity {
 
     @Override
     public void onBackPressed() {
+        Bundle b = new Bundle();
+        b.putString("groupID", groupID);
         Intent intent = new Intent(SeeUsersActivity.this,
                 GroupViewActivity.class);
+        intent.putExtras(b);
         startActivity(intent);
         finish();
     }

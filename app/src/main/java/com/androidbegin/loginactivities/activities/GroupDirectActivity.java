@@ -16,8 +16,10 @@ public class GroupDirectActivity extends Activity {
 
         setContentView(R.layout.group_direct_activity);
 
+        // View Admin Groups Button
         Button viewAdminGroups = (Button) findViewById(R.id.viewAdminGroups);
 
+        // View Admin Groups Listener
         viewAdminGroups.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,8 +33,10 @@ public class GroupDirectActivity extends Activity {
             }
         });
 
+        // Vew Normal Groups Button
         Button viewNormalGroups = (Button) findViewById(R.id.viewNormalGroups);
 
+        // View Normal Groups Listener
         viewNormalGroups.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
