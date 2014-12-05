@@ -39,22 +39,22 @@ public class AdminPastQuestionActivity extends Activity {
     private JSONArray userList;
     private String[] ansText;
     private String[] userText;
-    private String groupID;
 
-    // private ArrayAdapter<String> listAdapter ;
+    private String groupID;
+    private boolean isAdmin;
+    private String groupName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         // Get the view from shared_current_question_activityt_question_activity.xml
         setContentView(R.layout.generic_listview);
 
-        // Create ArrayAdapter using the planet list.
-        //  listAdapter = new ArrayAdapter<String>(this, R.layout.admin_singleitemview);
-
-
         Bundle b = this.getIntent().getExtras();
         groupID = b.getString("groupID");
+        isAdmin = b.getBoolean("isAdmin");
+        groupName = b.getString("groupName");
 
         groupQuestionObjects = new ArrayList<ParseObject>();
         groupQuestionStrings = new ArrayList<String>();
@@ -65,8 +65,10 @@ public class AdminPastQuestionActivity extends Activity {
 
     // RemoteDataTask AsyncTask
     private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
+
         @Override
         protected void onPreExecute() {
+
             super.onPreExecute();
             // Create a progressdialog
             mProgressDialog = new ProgressDialog(AdminPastQuestionActivity.this);
@@ -81,6 +83,7 @@ public class AdminPastQuestionActivity extends Activity {
 
         @Override
         protected Void doInBackground(Void... params) {
+
             ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
                     "Group");
             query.whereEqualTo("isOpen", false);
@@ -115,13 +118,9 @@ public class AdminPastQuestionActivity extends Activity {
 
         @Override
         protected void onPostExecute(Void result) {
+
             // Locate the listview in generic_listview.xmlestion_activity.xml
             listview = (ListView) findViewById(R.id.listview);
-            // Pass the results into an ArrayAdapter
-            //adapter = new ArrayAdapter<String>(CurrentQuestionActivity.this,
-            //        R.layout.listview_item);
-
-
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(AdminPastQuestionActivity.this,
                     R.layout.listview_item, groupQuestionStrings);
@@ -139,7 +138,6 @@ public class AdminPastQuestionActivity extends Activity {
                     // Send single item click data to AdminSingleItemView Class
 
                     user = ParseUser.getCurrentUser();
-                    //String askerID = ob.get((int) id).getString("asker");
                     String userID = user.getObjectId();
 
                     String questionID = groupQuestionObjects.get((int) id).getObjectId();
@@ -169,7 +167,6 @@ public class AdminPastQuestionActivity extends Activity {
                             e.printStackTrace();
                         }
                     }
-                    //userText = userCollect.toArray(new String[userCollect.size()]);
 
                     ArrayList<Integer> responseCollect = new ArrayList<Integer>();
                     for (int i=0; i < responses.length(); i++){
@@ -181,19 +178,18 @@ public class AdminPastQuestionActivity extends Activity {
                     }
 
                     Bundle b=new Bundle();
-                    //b.putString("askerID", askerID);
                     b.putString("groupID", groupID);
+                    b.putString("groupName", groupName);
                     b.putString("questionID", questionID);
                     b.putString("userID", userID);
                     b.putIntegerArrayList("responseCollect", responseCollect);
                     b.putStringArrayList("userCollect", userCollect);
                     b.putStringArray("ansArray", ansText);
+                    b.putBoolean("isAdmin", isAdmin);
 
                     Intent intent=new Intent(AdminPastQuestionActivity.this,
-                            //RadioButtonTester.class);
                             AdminSingleItemViewPast.class);
                     intent.putExtras(b);
-                    // Open AdminSingleItemView.java Activity
                     startActivity(intent);
                     finish();
                 }
@@ -205,7 +201,8 @@ public class AdminPastQuestionActivity extends Activity {
     public void onBackPressed() {
         Bundle b=new Bundle();
         b.putString("groupID", groupID);
-
+        b.putBoolean("isAdmin", isAdmin);
+        b.putString("groupName", groupName);
         Intent intent = new Intent(AdminPastQuestionActivity.this,
                 AdminQuestionListingActivity.class);
         intent.putExtras(b);

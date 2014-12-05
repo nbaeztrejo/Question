@@ -1,7 +1,10 @@
 package com.androidbegin.loginactivities.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,12 +28,16 @@ public class LoginSignupActivity extends Activity {
     private String passwordtxt;
     private EditText password;
     private EditText username;
+    private int alertLength;
 
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         // Get the view from main.xml
         setContentView(R.layout.loginsignup);
+
         // Locate EditTexts in main.xml
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
@@ -38,6 +45,17 @@ public class LoginSignupActivity extends Activity {
         // Locate Buttons in main.xml
         loginbutton = (Button) findViewById(R.id.login);
         signup = (Button) findViewById(R.id.signup);
+
+        // Check if the device is connected to the internet
+        if (!connectionAvailable()){
+            alertLength = 5;
+            for (int i = 0; i < alertLength; i++) {
+                Toast.makeText(
+                        getApplicationContext(),
+                        "Please connect to the internet",
+                        Toast.LENGTH_LONG).show();
+            }
+        }
 
         // Login Button Click Listener
         loginbutton.setOnClickListener(new OnClickListener() {
@@ -91,7 +109,7 @@ public class LoginSignupActivity extends Activity {
                         || usernametxt.length() >16)  {
 
                     Toast.makeText(getApplicationContext(),
-                            "Please Enter Valid Username",
+                            "Please Enter Valid Username Between 4 and 16 Alphanumeric Characters",
                             Toast.LENGTH_LONG).show();
 
                 }
@@ -100,7 +118,7 @@ public class LoginSignupActivity extends Activity {
                         || passwordtxt.length() >16){
 
                     Toast.makeText(getApplicationContext(),
-                            "Please Enter Valid Password",
+                            "Please Enter Valid Password Between 4 and 16 Alphanumeric Characters",
                             Toast.LENGTH_LONG).show();
                 }
 
@@ -134,6 +152,47 @@ public class LoginSignupActivity extends Activity {
 
             }
         });
+    }
+
+    public static boolean getNetworkState(Context pContext)
+    {
+        ConnectivityManager connect = null;
+        connect =  (ConnectivityManager)pContext.getSystemService(pContext.CONNECTIVITY_SERVICE);
+
+        if(connect != null)
+        {
+            NetworkInfo result = connect.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            if (result != null && result.isConnectedOrConnecting())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+            return false;
+    }
+
+    public static boolean getWifiState(Context context)
+    {
+        ConnectivityManager connect =  (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if ( connect.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public boolean connectionAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager
+                .getActiveNetworkInfo();
+        return activeNetworkInfo != null;
     }
 
     public boolean isAlphaNumeric(String s) {

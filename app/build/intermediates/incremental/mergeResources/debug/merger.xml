@@ -2,119 +2,134 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res" >
+        <source path="/Users/nbaez/Downloads/Question 3/app/src/main/res" >
             <file
                 name="ic_launcher"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/drawable-hdpi/ic_launcher.png"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/drawable-hdpi/ic_launcher.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
+                name="add_group_activity"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/add_group_activity.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="admin_add_user_activity"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_add_user_activity.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/admin_add_user_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="admin_create_group_activity"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_create_group_activity.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/admin_create_group_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="admin_create_question_activity"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_create_question_activity.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/admin_create_question_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="admin_future_question_activity"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_future_question_activity.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/admin_future_question_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="admin_past_question_activity"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_past_question_activity.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/admin_past_question_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="admin_question_listing_activity"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_question_listing_activity.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/admin_question_listing_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="admin_singleitemview"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_singleitemview.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/admin_singleitemview.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="admin_singleitemview_past"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_singleitemview_past.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/admin_singleitemview_past.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="admin_view_groups_activity"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_view_groups_activity.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/admin_view_groups_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="generic_listview"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/generic_listview.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/generic_listview.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="group_direct_activity"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/group_direct_activity.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/group_direct_activity.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="group_view_activity"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/group_view_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="listview_item"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/listview_item.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/listview_item.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="loginsignup"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/loginsignup.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/loginsignup.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="normal_question_listing_activity"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/normal_question_listing_activity.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/normal_question_listing_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="normal_singleitemview"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/normal_singleitemview.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/normal_singleitemview.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="normal_singleitemview_past"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/normal_singleitemview_past.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/normal_singleitemview_past.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="radiobuttonsingleitemview"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/radiobuttonsingleitemview.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/radiobuttonsingleitemview.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="responseview"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/responseview.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/responseview.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="saver"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/saver.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/saver.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="see_users_activity"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/see_users_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="welcome"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/welcome.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/layout/welcome.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="create_question"
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/menu/create_question.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/menu/create_question.xml"
                 qualifiers=""
                 type="menu" />
             <file
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/values/dimens.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/values/dimens.xml"
                 qualifiers="" >
                 <dimen name="activity_horizontal_margin" >16dp
                 </dimen>
@@ -122,47 +137,51 @@
                 </dimen>
             </file>
             <file
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/values/strings.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/values/strings.xml"
                 qualifiers="" >
                 <string name="error_join" >, and
                 </string>
-                <string name="SignupBtn" >Sign Up
-                </string>
                 <string name="action_settings" >Settings
-                </string>
-                <string name="title_activity_main" >View Questions :)
                 </string>
                 <string name="title_activity_current_question" >CurrentQuestionActivity
                 </string>
+                <string name="title_activity_main" >View Questions :)
+                </string>
                 <string name="Welcome" >Welcome!
+                </string>
+                <string name="error_blank_groupname" >Enter a group name
                 </string>
                 <string name="LoginBtn" >Login
                 </string>
                 <string name="error_blank_username" >Enter a username
                 </string>
-                <string name="title_activity_response_view" >ResponseViewActivity
-                </string>
                 <string name="AdminButton" >Admin Group
-                </string>
-                <string name="title_activity_future_question" >FutureQuestionActivity
-                </string>
-                <string name="namelabel" >"Answer Choices : "
                 </string>
                 <string name="title_activity_past_question" >PastQuestionActivity
                 </string>
                 <string name="title_activity_normal_question_listing" >NormalQuestionListingActivity
                 </string>
-                <string name="closeQuestion" >Close Question
-                </string>
                 <string name="Username" >Username
                 </string>
                 <string name="Password" >Password
                 </string>
-                <string name="title_activity_admin_question_listing" >AdminQuestionListingActivity
-                </string>
                 <string name="page_name" >View questions
                 </string>
                 <string name="hello_world" >Hello world!
+                </string>
+                <string name="menu_settings" >Settings
+                </string>
+                <string name="SignupBtn" >Sign Up
+                </string>
+                <string name="title_activity_response_view" >ResponseViewActivity
+                </string>
+                <string name="title_activity_future_question" >FutureQuestionActivity
+                </string>
+                <string name="namelabel" >"Answer Choices : "
+                </string>
+                <string name="closeQuestion" >Close Question
+                </string>
+                <string name="title_activity_admin_question_listing" >AdminQuestionListingActivity
                 </string>
                 <string name="title_activity_create_question" >CreateQuestionActivity
                 </string>
@@ -170,11 +189,9 @@
                 </string>
                 <string name="error_end" >.
                 </string>
-                <string name="menu_settings" >Settings
-                </string>
             </file>
             <file
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/values/styles.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/values/styles.xml"
                 qualifiers="" >
 
                 <style
@@ -182,17 +199,17 @@
                     parent="android:Theme.Light" />
             </file>
             <file
-                path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/values-w820dp/dimens.xml"
+                path="/Users/nbaez/Downloads/Question 3/app/src/main/res/values-w820dp/dimens.xml"
                 qualifiers="w820dp-v13" >
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
         </source>
-        <source path="/Users/Sara/Downloads/Question-Inviting_Users/app/build/generated/res/rs/debug" />
-        <source path="/Users/Sara/Downloads/Question-Inviting_Users/app/build/generated/res/generated/debug" />
+        <source path="/Users/nbaez/Downloads/Question 3/app/build/generated/res/rs/debug" />
+        <source path="/Users/nbaez/Downloads/Question 3/app/build/generated/res/generated/debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/debug/res" />
+        <source path="/Users/nbaez/Downloads/Question 3/app/src/debug/res" />
     </dataSet>
 
 </merger>

@@ -19,11 +19,8 @@ public class Welcome extends Activity {
     private Button logout;
     private Button createGroups;
     private Button viewGroups;
-    //    private EditText result;
-    final Context context = this;
-    //    private Button button; //delete
-    private String groupName;
-    private ArrayList<String> groupUsers;
+    private Button joinGroup;
+    private final Context context = this;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,9 +45,7 @@ public class Welcome extends Activity {
         logout = (Button) findViewById(R.id.logout);
         viewGroups = (Button) findViewById(R.id.viewGroups);
         createGroups = (Button) findViewById(R.id.createGroups);
-//        result = (EditText) findViewById(R.id.editTextResult);
-//        button = (Button) findViewById(R.id.buttonPrompt);
-
+        joinGroup = (Button) findViewById(R.id.joinGroup);
 
         // Logout Button Click Listener
         logout.setOnClickListener(new OnClickListener() {
@@ -71,20 +66,29 @@ public class Welcome extends Activity {
 
             public void onClick(View arg0) {
                 Intent intent = new Intent(Welcome.this,
-                        //changed from
-                        //ViewGroupActivity.class);
-                       GroupDirectActivity.class);
+                        GroupDirectActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
 
-
+        // createGroups Button Click Listener
         createGroups.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Welcome.this,
-                    AdminCreateGroupActivity.class);
+                        AdminCreateGroupActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // joinGroup Button Click Listener
+        joinGroup.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Welcome.this,
+                        AddGroupActivity.class);
                 startActivity(intent);
                 finish();
             }

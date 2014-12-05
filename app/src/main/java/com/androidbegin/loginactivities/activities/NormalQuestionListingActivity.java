@@ -10,6 +10,8 @@ import android.widget.Button;
 public class NormalQuestionListingActivity extends Activity {
 
     private String groupID;
+    private boolean isAdmin;
+    private String groupName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,8 @@ public class NormalQuestionListingActivity extends Activity {
 
         Bundle b = this.getIntent().getExtras();
         groupID = b.getString("groupID");
+        isAdmin = b.getBoolean("isAdmin");
+        groupName = b.getString("groupName");
 
         //Past Question Button
         Button closedQuestion = (Button) findViewById(R.id.closedQuestion);
@@ -28,6 +32,7 @@ public class NormalQuestionListingActivity extends Activity {
             public void onClick (View arg0){
                 Bundle b = new Bundle();
                 b.putString("groupID", groupID);
+                b.putString("groupName", groupName);
 
                 Intent intent = new Intent(NormalQuestionListingActivity.this,
                         NormalPastQuestionActivity.class);
@@ -49,6 +54,7 @@ public class NormalQuestionListingActivity extends Activity {
             public void onClick (View arg0){
                 Bundle b = new Bundle();
                 b.putString("groupID", groupID);
+                b.putString("groupName", groupName);
 
                 Intent intent = new Intent(NormalQuestionListingActivity.this,
                         NormalCurrentQuestionActivity.class);
@@ -69,6 +75,9 @@ public class NormalQuestionListingActivity extends Activity {
 
         Bundle b = new Bundle();
         b.putString("groupID", groupID);
+        b.putBoolean("isAdmin", isAdmin);
+        b.putString("groupName", groupName);
+
         Intent intent = new Intent(NormalQuestionListingActivity.this,
                 NormalViewGroupActivity.class);
         intent.putExtras(b);

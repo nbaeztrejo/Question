@@ -9,6 +9,10 @@
         android:targetSdkVersion="15" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.androidbegin.loginactivities.activities.ParseApplication"
@@ -33,7 +37,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.androidbegin.loginactivities.activities.AdminQuestionListingActivity"
-            android:label="View Questions as Admin" />
+            android:label="View Questions (Admin)" />
         <activity
             android:name="com.androidbegin.loginactivities.activities.NormalQuestionListingActivity"
             android:label="View Questions"
@@ -48,10 +52,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.androidbegin.loginactivities.activities.AdminCurrentQuestionActivity"
-            android:label="Current Open Questions (Admin)"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.androidbegin.loginactivities.activities.AdminCurrentQuestionActivity2"
             android:label="Current Open Questions (Admin)"
             android:screenOrientation="portrait" />
         <activity
@@ -100,6 +100,18 @@
         <activity
             android:name="com.androidbegin.loginactivities.activities.AdminAddUserActivity"
             android:label="Add a new user to a group"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.androidbegin.loginactivities.activities.AddGroupActivity"
+            android:label="Add a new user to a group"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.androidbegin.loginactivities.activities.GroupViewActivity"
+            android:label="Group Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.androidbegin.loginactivities.activities.SeeUsersActivity"
+            android:label="Group Members"
             android:screenOrientation="portrait" />
     </application>
 

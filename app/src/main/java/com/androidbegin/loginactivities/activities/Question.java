@@ -1,12 +1,9 @@
 package com.androidbegin.loginactivities.activities;
 
-import com.parse.ParseACL;
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,10 +49,24 @@ public class Question extends ParseObject {
         put("userChoices", temp);
     }
 
+    public void setUserChoice (int i, int j) {
+        List<Integer> temp = new ArrayList();
+        temp = getList("userChoices");
+        temp.set(i, j);
+        put("userChoices", temp);
+    }
+
     public void incrementResponse (int i) {
         List<Integer> temp = new ArrayList();
         temp = getList("responseCollection");
         temp.set(i, temp.get(i) + 1);
+        put("responseCollection", temp);
+    }
+
+    public void decrementResponse (int i) {
+        List<Integer> temp = new ArrayList();
+        temp = getList("responseCollection");
+        temp.set(i, temp.get(i) - 1);
         put("responseCollection", temp);
     }
 

@@ -18,6 +18,8 @@ public class AdminSingleItemViewPast extends Activity {
 
     private ArrayList<String> displayArray;
     private String groupID;
+    private boolean isAdmin;
+    private String groupName;
     private double sum;
 
     @Override
@@ -31,6 +33,8 @@ public class AdminSingleItemViewPast extends Activity {
         String[] ansArray = b.getStringArray("ansArray");
         ArrayList<Integer> responseCollect = b.getIntegerArrayList("responseCollect");
         groupID = b.getString("groupID");
+        isAdmin = b.getBoolean("isAdmin");
+        groupName = b.getString("groupName");
 
         for (int i=0;i<responseCollect.size();i++) {
             sum+=responseCollect.get(i);
@@ -64,12 +68,11 @@ public class AdminSingleItemViewPast extends Activity {
 
         Bundle b=new Bundle();
         b.putString("groupID", groupID);
-
+        b.putBoolean("isAdmin", isAdmin);
+        b.putString("groupName", groupName);
         Intent intent = new Intent(AdminSingleItemViewPast.this,
                 AdminPastQuestionActivity.class);
-
         intent.putExtras(b);
-
         startActivity(intent);
         finish();
     }

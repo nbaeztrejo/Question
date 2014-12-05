@@ -17,6 +17,7 @@ public class NormalSingleItemViewPast extends Activity {
 
     private ArrayList<String> displayArray;
     private String groupID;
+    private String groupName;
     private double sum;
 
     @Override
@@ -30,6 +31,7 @@ public class NormalSingleItemViewPast extends Activity {
         String[] ansArray = b.getStringArray("ansArray");
         ArrayList<Integer> responseCollect = b.getIntegerArrayList("responseCollect");
         groupID = b.getString("groupID");
+        groupName = b.getString("groupName");
 
         for (int i = 0; i < responseCollect.size(); i++) {
             sum += responseCollect.get(i);
@@ -62,6 +64,7 @@ public class NormalSingleItemViewPast extends Activity {
 
         Bundle b=new Bundle();
         b.putString("groupID", groupID);
+        b.putString("groupName", groupName);
 
         Intent intent = new Intent(NormalSingleItemViewPast.this,
                 NormalPastQuestionActivity.class);

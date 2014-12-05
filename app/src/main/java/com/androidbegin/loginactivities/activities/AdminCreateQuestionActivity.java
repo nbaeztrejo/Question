@@ -30,6 +30,8 @@ public class AdminCreateQuestionActivity extends Activity {
     private String choice4;
 
     private String groupID;
+    private boolean isAdmin;
+    private String groupName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class AdminCreateQuestionActivity extends Activity {
 
         Bundle b = this.getIntent().getExtras();
         groupID = b.getString("groupID");
+        isAdmin = b.getBoolean("isAdmin");
+        groupName = b.getString("groupName");
 
         // Edittext objects that users put strings in
         titleText = (EditText) findViewById(R.id.questionTitle);
@@ -50,16 +54,20 @@ public class AdminCreateQuestionActivity extends Activity {
         // Save question to parse
         Button saveQuestion = (Button) findViewById(R.id.saveQuestion);
 
+        // Save question listener
         saveQuestion.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+
+                // String values for the Question class
                 questionString = titleText.getText().toString();
                 choice1 = choice1Text.getText().toString();
                 choice2 = choice2Text.getText().toString();
                 choice3 = choice3Text.getText().toString();
                 choice4 = choice4Text.getText().toString();
 
+                // Checks input for errors
                 if (choice1.length() == 0 || choice2.length() == 0 ||
                         choice3.length() == 0 || choice4.length() == 0) {
                     Toast.makeText(getApplicationContext(),
@@ -68,6 +76,8 @@ public class AdminCreateQuestionActivity extends Activity {
                     Toast.makeText(getApplicationContext(),
                             "Please Enter Question Title", Toast.LENGTH_LONG).show();
                 } else {
+
+                    // Create an instance of the Question ParseObject subclass
                     Question question = new Question();
 
                     question.initialize(questionString, groupID, ParseUser.getCurrentUser().getObjectId());
@@ -92,7 +102,8 @@ public class AdminCreateQuestionActivity extends Activity {
 
                     Bundle b = new Bundle();
                     b.putString("groupID", groupID);
-
+                    b.putBoolean("isAdmin", isAdmin);
+                    b.putString("groupName", groupName);
                     Intent intent = new Intent(
                             AdminCreateQuestionActivity.this,
                             AdminQuestionListingActivity.class);
@@ -110,6 +121,8 @@ public class AdminCreateQuestionActivity extends Activity {
 
         Bundle b = new Bundle();
         b.putString("groupID", groupID);
+        b.putBoolean("isAdmin", isAdmin);
+        b.putString("groupName", groupName);
         Intent intent = new Intent(AdminCreateQuestionActivity.this,
                 AdminQuestionListingActivity.class);
         intent.putExtras(b);

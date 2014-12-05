@@ -109,11 +109,11 @@ public class NormalViewGroupActivity extends Activity {
 
                     //get stuff from previous page using Bundle
                     Bundle b = new Bundle();
-
                     b.putString("groupID", groupIDs.get(itemPosition));
+                    b.putBoolean("isAdmin", false);
+                    b.putString("groupName",itemValue);
 
                     Intent i = new Intent(NormalViewGroupActivity.this,
-                            //AdminQuestionListingActivity.class);
                             NormalQuestionListingActivity.class);
                     i.putExtras(b);
 

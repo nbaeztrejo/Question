@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddGroupActivity">
+
+    <EditText
+        android:id="@+id/groupText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHint="#ff33d6ff"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Add Group" />
+
+    <Button
+        android:id="@+id/saveGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="100dp"
+        android:clickable="true"
+        android:textColor="#ff33d6ff"
+        android:width="180dp" />
+
+</LinearLayout><!-- From: file:/Users/nbaez/Downloads/Question%203/app/src/main/res/layout/add_group_activity.xml -->

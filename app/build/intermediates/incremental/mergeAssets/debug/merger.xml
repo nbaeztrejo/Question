@@ -2,10 +2,10 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/assets" />
+        <source path="/Users/nbaez/Downloads/Question 3/app/src/main/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/debug/assets" />
+        <source path="/Users/nbaez/Downloads/Question 3/app/src/debug/assets" />
     </dataSet>
 
 </merger>

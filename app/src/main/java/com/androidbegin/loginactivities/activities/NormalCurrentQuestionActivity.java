@@ -4,9 +4,6 @@ package com.androidbegin.loginactivities.activities;
  * Created by Sara Shi on 11/22/2014.
  */
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,9 +12,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -26,6 +23,9 @@ import com.parse.ParseUser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class NormalCurrentQuestionActivity extends Activity {
     // Declare Variables
@@ -39,18 +39,23 @@ public class NormalCurrentQuestionActivity extends Activity {
     private JSONArray responseList;
     private JSONArray responses;
     private JSONArray userList;
+    private JSONArray userChoicesList;
     private String[] ansText;
     private String[] userText;
     private String groupID;
+    private String groupName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         // Get the view from generic_listview.xmlestion_activity.xml
         setContentView(R.layout.generic_listview);
 
         Bundle b = this.getIntent().getExtras();
         groupID = b.getString("groupID");
+        groupName = b.getString("groupName");
 
         groupQuestionObjects = new ArrayList<ParseObject>();
         groupQuestionStrings = new ArrayList<String>();
@@ -61,8 +66,10 @@ public class NormalCurrentQuestionActivity extends Activity {
 
     // RemoteDataTask AsyncTask
     private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
+
         @Override
         protected void onPreExecute() {
+
             super.onPreExecute();
             // Create a progressdialog
             mProgressDialog = new ProgressDialog(NormalCurrentQuestionActivity.this);
@@ -77,15 +84,16 @@ public class NormalCurrentQuestionActivity extends Activity {
 
         @Override
         protected Void doInBackground(Void... params) {
+
             ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
                     "Group");
-            //query.whereEqualTo("objectId", groupObjectID);
             try {
                 group = query.get(groupID);
                 groupQuestionIDs = group.getList("questions");
             }
             catch (ParseException e) {
                 Log.e("Error", e.getMessage());
+                groupQuestionStrings.add("failure1");
                 e.printStackTrace();
                 groupQuestionIDs = null;
             }
@@ -103,6 +111,7 @@ public class NormalCurrentQuestionActivity extends Activity {
                 }
                 catch (ParseException e) {
                     Log.e("Error", e.getMessage());
+                    groupQuestionStrings.add("failure2");
                     e.printStackTrace();
                 }
             }
@@ -111,11 +120,9 @@ public class NormalCurrentQuestionActivity extends Activity {
 
         @Override
         protected void onPostExecute(Void result) {
+
             // Locate the listview in generic_listview.xmlestion_activity.xml
             listview = (ListView) findViewById(R.id.listview);
-            // Pass the results into an ArrayAdapter
-            //adapter = new ArrayAdapter<String>(CurrentQuestionActivity.this,
-            //        R.layout.listview_item);
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(NormalCurrentQuestionActivity.this,
                     R.layout.listview_item, groupQuestionStrings);
@@ -132,7 +139,6 @@ public class NormalCurrentQuestionActivity extends Activity {
                                         int position, long id) {
 
                     user = ParseUser.getCurrentUser();
-                    //String askerID = ob.get((int) id).getString("asker");
                     String userID = user.getObjectId();
 
                     String questionID = groupQuestionObjects.get((int) id).getObjectId();
@@ -140,6 +146,8 @@ public class NormalCurrentQuestionActivity extends Activity {
                     responses = groupQuestionObjects.get((int) id).getJSONArray("responseCollection");
 
                     userList = groupQuestionObjects.get((int) id).getJSONArray("userResponses");
+
+                    userChoicesList = groupQuestionObjects.get((int) id).getJSONArray("userChoices");
 
 
                     List<String> answerList = new ArrayList<String>();
@@ -162,7 +170,6 @@ public class NormalCurrentQuestionActivity extends Activity {
                             e.printStackTrace();
                         }
                     }
-                    //userText = userCollect.toArray(new String[userCollect.size()]);
 
                     ArrayList<Integer> responseCollect = new ArrayList<Integer>();
                     for (int i=0; i < responses.length(); i++){
@@ -173,17 +180,27 @@ public class NormalCurrentQuestionActivity extends Activity {
                         }
                     }
 
+                    ArrayList<Integer> userChoicesCollect = new ArrayList<Integer>();
+                    for (int i=0; i < userChoicesList.length(); i++){
+                        try {
+                            userChoicesCollect.add(userChoicesList.getInt(i));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
                     Bundle b=new Bundle();
-                    //b.putString("askerID", askerID);
                     b.putString("groupID", groupID);
                     b.putString("questionID", questionID);
                     b.putString("userID", userID);
                     b.putIntegerArrayList("responseCollect", responseCollect);
                     b.putStringArrayList("userCollect", userCollect);
+                    b.putIntegerArrayList("userChoicesCollect", userChoicesCollect);
+
                     b.putStringArray("ansArray", ansText);
+                    b.putString("groupName", groupName);
 
                     Intent intent=new Intent(NormalCurrentQuestionActivity.this,
-                            //RadioButtonTester.class);
                             NormalSingleItemView.class);
                     intent.putExtras(b);
                     startActivity(intent);
@@ -197,6 +214,7 @@ public class NormalCurrentQuestionActivity extends Activity {
     public void onBackPressed() {
         Bundle b=new Bundle();
         b.putString("groupID", groupID);
+        b.putString("groupName", groupName);
         Intent intent = new Intent(NormalCurrentQuestionActivity.this,
                 NormalQuestionListingActivity.class);
         intent.putExtras(b);

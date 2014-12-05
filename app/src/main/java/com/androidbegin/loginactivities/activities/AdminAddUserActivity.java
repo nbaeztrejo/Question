@@ -97,19 +97,6 @@ public class AdminAddUserActivity extends Activity {
         dialog.setMessage("Adding user to group...");
         dialog.show();
 
-
-        // Retrieve the object by id
-        //query.getFirst().getList("contacts");
-
-        /*query.getInBackground(userObjectID, new GetCallback<ParseUser>() {
-            public void done(ParseUser toBeAdded, ParseException e) {
-                if (e == null) {
-                    toBeAdded.add("contacts", currentUser.getObjectId());
-                    toBeAdded.saveInBackground();
-                }
-            }
-        });*/
-
         // Add userID to Group ParseObject subclass
         // Add groupID to ParseUser group array <---- NEEDS A WORKAROUND, NO ACL PERMISSION
         ParseQuery<Group> groupQuery = Group.getQuery();

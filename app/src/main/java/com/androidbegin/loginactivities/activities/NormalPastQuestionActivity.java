@@ -40,21 +40,20 @@ public class NormalPastQuestionActivity extends Activity {
     private String[] ansText;
     private String[] userText;
     private String groupID;
-
+    private String groupName;
     // private ArrayAdapter<String> listAdapter ;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         // Get the view from shared_current_question_activityt_question_activity.xml
         setContentView(R.layout.generic_listview);
 
-        // Create ArrayAdapter using the planet list.
-        //  listAdapter = new ArrayAdapter<String>(this, R.layout.admin_singleitemview);
-
-
         Bundle b = this.getIntent().getExtras();
         groupID = b.getString("groupID");
+        groupName = b.getString("groupName");
 
         groupQuestionObjects = new ArrayList<ParseObject>();
         groupQuestionStrings = new ArrayList<String>();
@@ -65,8 +64,10 @@ public class NormalPastQuestionActivity extends Activity {
 
     // RemoteDataTask AsyncTask
     private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
+
         @Override
         protected void onPreExecute() {
+
             super.onPreExecute();
             // Create a progressdialog
             mProgressDialog = new ProgressDialog(NormalPastQuestionActivity.this);
@@ -117,9 +118,6 @@ public class NormalPastQuestionActivity extends Activity {
         protected void onPostExecute(Void result) {
             // Locate the listview in generic_listview.xmlestion_activity.xml
             listview = (ListView) findViewById(R.id.listview);
-            // Pass the results into an ArrayAdapter
-            //adapter = new ArrayAdapter<String>(CurrentQuestionActivity.this,
-            //        R.layout.listview_item);
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(NormalPastQuestionActivity.this,
                     R.layout.listview_item, groupQuestionStrings);
@@ -137,7 +135,6 @@ public class NormalPastQuestionActivity extends Activity {
                     // Send single item click data to AdminSingleItemView Class
 
                     user = ParseUser.getCurrentUser();
-                    //String askerID = ob.get((int) id).getString("asker");
                     String userID = user.getObjectId();
 
                     String questionID = groupQuestionObjects.get((int) id).getObjectId();
@@ -167,7 +164,6 @@ public class NormalPastQuestionActivity extends Activity {
                             e.printStackTrace();
                         }
                     }
-                    //userText = userCollect.toArray(new String[userCollect.size()]);
 
                     ArrayList<Integer> responseCollect = new ArrayList<Integer>();
                     for (int i=0; i < responses.length(); i++){
@@ -179,19 +175,17 @@ public class NormalPastQuestionActivity extends Activity {
                     }
 
                     Bundle b=new Bundle();
-                    //b.putString("askerID", askerID);
                     b.putString("groupID", groupID);
                     b.putString("questionID", questionID);
                     b.putString("userID", userID);
                     b.putIntegerArrayList("responseCollect", responseCollect);
                     b.putStringArrayList("userCollect", userCollect);
                     b.putStringArray("ansArray", ansText);
+                    b.putString("groupName", groupName);
 
                     Intent intent=new Intent(NormalPastQuestionActivity.this,
-                            //RadioButtonTester.class);
                             NormalSingleItemViewPast.class);
                     intent.putExtras(b);
-                    // Open AdminSingleItemView.java Activity
                     startActivity(intent);
                     finish();
                 }
@@ -203,7 +197,7 @@ public class NormalPastQuestionActivity extends Activity {
     public void onBackPressed() {
         Bundle b=new Bundle();
         b.putString("groupID", groupID);
-
+        b.putString("groupName", groupName);
         Intent intent = new Intent(NormalPastQuestionActivity.this,
                 NormalQuestionListingActivity.class);
         intent.putExtras(b);

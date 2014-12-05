@@ -18,10 +18,11 @@ import com.parse.ParseUser;
 public class AdminCreateGroupActivity extends Activity {
 
     private EditText groupName;
-    //EditText user1;
-
     private String groupNameString;
-    //String user1Name;
+    private String groupObjectID;
+    private Group groupCheck;
+    private boolean groupExists;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,6 @@ public class AdminCreateGroupActivity extends Activity {
 
         // Edittext objects that users put strings in
         groupName = (EditText) findViewById(R.id.groupName);
-       // user1 = (EditText) findViewById(R.id.user1);
 
         Button saveGroup = (Button) findViewById(R.id.saveGroup);
 
@@ -39,76 +39,59 @@ public class AdminCreateGroupActivity extends Activity {
 
             @Override
             public void onClick(View view) {
-                //get group name from edit text
+
+                // Get group name from edit text
                 groupNameString = groupName.getText().toString();
 
-                //get user name from edit text
-                //user1Name = user1.getText().toString();
+                // Begin various checks of the input
+                ParseQuery<Group> query = Group.getQuery();
+                query.whereEqualTo("name", groupNameString);
+                try {
+                    groupObjectID = query.getFirst().getObjectId();
+                    groupCheck = query.get(groupObjectID);
+                    groupExists = true;
+                } catch (com.parse.ParseException e) {
+                    e.printStackTrace();
+                    groupExists = false;
+                }
 
-                if (groupNameString.length() != 0 && isAlphaNumeric(groupNameString)) {
-
-                    Group group = new Group();
-                    group.initialize(groupNameString);
-
-
-                    ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
-                    try {
-                        ParseUser temp = userQuery.getFirst();
-                        String groupID = group.getObjectId();
-
-                        ParseUser.getCurrentUser().add("groups", groupID);
-                        ParseUser.getCurrentUser().saveInBackground();
-                    } catch (ParseException e) {
-
-                    }
-
-                    Intent intent = new Intent(
-                            AdminCreateGroupActivity.this,
-                            AdminViewGroupActivity.class);
-                    startActivity(intent);
-                    finish();
-
+                // Checks if the given group name is already taken
+                if (groupExists){
+                    Toast.makeText(AdminCreateGroupActivity.this,
+                            "This group name already exists. Please enter a unique group name.",
+                            Toast.LENGTH_LONG).show();
                 }
 
                 else {
-                    Toast.makeText(getApplicationContext(),
-                            "Please Enter Valid Group Title", Toast.LENGTH_LONG).show();
+                    // Get user name from edit text
+                    if (groupNameString.length() != 0 && isAlphaNumeric(groupNameString)) {
+
+                        Group group = new Group();
+                        group.initialize(groupNameString);
+
+
+                        ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
+                        try {
+                            ParseUser temp = userQuery.getFirst();
+                            String groupID = group.getObjectId();
+
+                            ParseUser.getCurrentUser().add("groups", groupID);
+                            ParseUser.getCurrentUser().saveInBackground();
+                        } catch (ParseException e) {
+
+                        }
+
+                        Intent intent = new Intent(
+                                AdminCreateGroupActivity.this,
+                                AdminViewGroupActivity.class);
+                        startActivity(intent);
+                        finish();
+
+                    } else {
+                        Toast.makeText(getApplicationContext(),
+                                "Please Enter Valid Group Title", Toast.LENGTH_LONG).show();
+                    }
                 }
-
-                /*ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
-                userQuery.whereEqualTo("username",user1Name);
-                try {
-                    //get user associated with username
-                    ParseUser temp = userQuery.getFirst();
-                    //add that user's objectID to group
-                    group.addUser(temp.getObjectId());
-                    group.saveInBackground();
-
-                    String groupID = group.getObjectId();
-
-                    //add group to user's list of groups
-                    temp.add("groups",groupID);
-                    //add group to current user's list of groups
-                    ParseUser.getCurrentUser().add("groups",groupID);
-                    ParseUser.getCurrentUser().saveInBackground();
-                } catch (ParseException e)
-                {
-                    group.addUser("Failure");
-                    group.saveInBackground();
-                }*/
-
-
-                //ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
-                //        "Group");
-                //try {
-
-                //}
-                //catch (ParseException e) {
-                //    Log.e("Error", e.getMessage());
-                //    e.printStackTrace();
-                //}
-
-
             }
         });
     }
