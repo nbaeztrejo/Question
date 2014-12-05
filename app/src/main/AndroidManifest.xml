@@ -65,6 +65,12 @@
             />
 
         <activity
+            android:name=".AdminCurrentQuestionActivity2"
+            android:label="Current Open Questions (Admin)"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
             android:name=".NormalCurrentQuestionActivity"
             android:label="Current Open Questions"
             android:screenOrientation="portrait"
@@ -84,7 +90,7 @@
 
         <activity
             android:name=".AdminSingleItemView"
-            android:label="Submit a Response or Close the Question"
+            android:label="Close the Question"
             />
 
         <activity
@@ -129,20 +135,8 @@
             />
 
         <activity
-            android:name=".AddGroupActivity"
+            android:name=".AdminAddUserActivity"
             android:label="Add a new user to a group"
-            android:screenOrientation="portrait"
-            />
-
-        <activity
-            android:name=".GroupViewActivity"
-            android:label="Group Details"
-            android:screenOrientation="portrait"
-            />
-
-        <activity
-            android:name=".SeeUsersActivity"
-            android:label="Group Members"
             android:screenOrientation="portrait"
             />
 

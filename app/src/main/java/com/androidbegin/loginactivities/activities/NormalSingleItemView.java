@@ -23,13 +23,13 @@ import java.util.ArrayList;
 public class NormalSingleItemView extends Activity {
 
     //Close question button
-    Button closeQuestion;
-    Button submit;
-    RadioGroup rgOpinion;
-    RadioButton selectRadio;
-    int responseChoice = -1;
-    String opinion;
-    public int radioIndex;
+    private Button closeQuestion;
+    private Button submit;
+    private RadioGroup rgOpinion;
+    private RadioButton selectRadio;
+    private int responseChoice = -1;
+    private String opinion;
+    private int radioIndex;
     private String groupID;
 
 

@@ -10,17 +10,21 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class AdminSingleItemViewPast extends Activity {
 
     private ArrayList<String> displayArray;
     private String groupID;
+    private double sum;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        sum = 0;
         setContentView(R.layout.admin_singleitemview_past);
 
         Bundle b = this.getIntent().getExtras();
@@ -28,10 +32,23 @@ public class AdminSingleItemViewPast extends Activity {
         ArrayList<Integer> responseCollect = b.getIntegerArrayList("responseCollect");
         groupID = b.getString("groupID");
 
-        displayArray = new ArrayList<String>();
+        for (int i=0;i<responseCollect.size();i++) {
+            sum+=responseCollect.get(i);
+        }
 
-        for (int i=0;i<ansArray.length;i++) {
-            displayArray.add(responseCollect.get(i)+": "+ansArray[i]);
+        displayArray = new ArrayList<String>();
+        displayArray.add("Number of responses: " + (int) sum);
+
+        if (sum == 0) {
+            for (int i=0;i<ansArray.length;i++) {
+                displayArray.add(0 + "%: " + ansArray[i]);
+            }
+        } else {
+            for (int i=0;i<ansArray.length;i++) {
+                DecimalFormat df = new DecimalFormat("##.#");
+                double temp = responseCollect.get(i) / sum * 100;
+                displayArray.add(df.format(temp) + "%: " + ansArray[i]);
+            }
         }
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
@@ -49,7 +66,7 @@ public class AdminSingleItemViewPast extends Activity {
         b.putString("groupID", groupID);
 
         Intent intent = new Intent(AdminSingleItemViewPast.this,
-                AdminQuestionListingActivity.class);
+                AdminPastQuestionActivity.class);
 
         intent.putExtras(b);
 

@@ -51,6 +51,10 @@
             android:label="Current Open Questions (Admin)"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.androidbegin.loginactivities.activities.AdminCurrentQuestionActivity2"
+            android:label="Current Open Questions (Admin)"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.androidbegin.loginactivities.activities.NormalCurrentQuestionActivity"
             android:label="Current Open Questions"
             android:screenOrientation="portrait" />
@@ -64,7 +68,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.androidbegin.loginactivities.activities.AdminSingleItemView"
-            android:label="Submit a Response or Close the Question" />
+            android:label="Close the Question" />
         <activity
             android:name="com.androidbegin.loginactivities.activities.NormalSingleItemView"
             android:label="Submit a Response"
@@ -94,16 +98,8 @@
             android:label="View Groups"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.androidbegin.loginactivities.activities.AddGroupActivity"
+            android:name="com.androidbegin.loginactivities.activities.AdminAddUserActivity"
             android:label="Add a new user to a group"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.androidbegin.loginactivities.activities.GroupViewActivity"
-            android:label="Group Details"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.androidbegin.loginactivities.activities.SeeUsersActivity"
-            android:label="Group Members"
             android:screenOrientation="portrait" />
     </application>
 

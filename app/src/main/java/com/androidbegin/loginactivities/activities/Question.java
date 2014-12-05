@@ -16,12 +16,13 @@ import java.util.List;
 @ParseClassName("Question")
 public class Question extends ParseObject {
 
-    public void initialize(String questionText){
+    public void initialize(String questionText, String GroupID, String currentUserID){
         put("questionText", questionText);
+        put("group", GroupID);
         ArrayList<String> responseTextList = new ArrayList<String>();
         put("responseTextList",responseTextList);
         put("isOpen", true);
-        put("asker", ParseUser.getCurrentUser());
+        put("asker", currentUserID);
 
         ArrayList<Integer> responseCollection = new ArrayList();
         for(int i = 0; i < 4; i++){
@@ -32,7 +33,7 @@ public class Question extends ParseObject {
         // Array containing users that have responded to the question
         // Also contains the question ASKER (2nd line, do not comment out)
         List<String> userResponses = new ArrayList();
-        userResponses.add(ParseUser.getCurrentUser().getObjectId());
+        userResponses.add(currentUserID);
         put("userResponses", userResponses);
 
         // Array containing the response each user has selected

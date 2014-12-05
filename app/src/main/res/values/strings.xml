@@ -23,7 +23,7 @@
     <string name="namelabel">"Answer Choices : "</string>
     <string name="closeQuestion">Close Question</string>
 
-    <string name="error_blank_groupname">Enter a group name</string>
+    <string name="error_blank_username">Enter a username</string>
     <string name="error_join">, and</string>
     <string name="error_end">.</string>
 

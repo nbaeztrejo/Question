@@ -89,6 +89,23 @@ public class AdminCurrentQuestionActivity extends Activity {
                 e.printStackTrace();
                 groupQuestionIDs = null;
             }
+
+            // Retrieve object "questionText" from Parse.com database
+            for (String questionID : groupQuestionIDs) {
+                ParseQuery<ParseObject> questionQuery = new ParseQuery<ParseObject>(
+                        "Question");
+                try {
+                    ParseObject toBeAdded = questionQuery.get(questionID);
+                    if (toBeAdded.getBoolean("isOpen")) {
+                        groupQuestionObjects.add(toBeAdded);
+                        groupQuestionStrings.add(toBeAdded.getString("questionText"));
+                    }
+                }
+                catch (ParseException e) {
+                    Log.e("Error", e.getMessage());
+                    e.printStackTrace();
+                }
+            }
             return null;
         }
 
@@ -100,22 +117,7 @@ public class AdminCurrentQuestionActivity extends Activity {
             //adapter = new ArrayAdapter<String>(CurrentQuestionActivity.this,
             //        R.layout.listview_item);
 
-            // Retrieve object "questionText" from Parse.com database
-            for (String questionID : groupQuestionIDs) {
-                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
-                        "Question");
-                try {
-                    ParseObject toBeAdded = query.get(questionID);
-                    if (toBeAdded.getBoolean("isOpen")) {
-                        groupQuestionObjects.add(toBeAdded);
-                        groupQuestionStrings.add(toBeAdded.getString("questionText"));
-                    }
-                }
-                catch (ParseException e) {
-                    Log.e("Error", e.getMessage());
-                    e.printStackTrace();
-                }
-            }
+
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(AdminCurrentQuestionActivity.this,
                     R.layout.listview_item, groupQuestionStrings);

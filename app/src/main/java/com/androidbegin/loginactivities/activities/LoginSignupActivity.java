@@ -19,12 +19,12 @@ import java.util.ArrayList;
 
 public class LoginSignupActivity extends Activity {
     // Declare Variables
-    Button loginbutton;
-    Button signup;
-    String usernametxt;
-    String passwordtxt;
-    EditText password;
-    EditText username;
+    private Button loginbutton;
+    private Button signup;
+    private String usernametxt;
+    private String passwordtxt;
+    private EditText password;
+    private EditText username;
 
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {

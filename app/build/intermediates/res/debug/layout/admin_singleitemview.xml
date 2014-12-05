@@ -23,25 +23,15 @@
     </RadioGroup>
 
 
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit Response"
-        android:clickable="true"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:id="@+id/closeQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/submit"
+        android:layout_below="@+id/radio0"
         android:text="Close Question"
         android:layout_centerHorizontal="true"
         android:clickable="true"
         />
 
 
-</RelativeLayout><!-- From: file:/C:/Users/Kevin/AndroidStudioProjects/Question/app/src/main/res/layout/admin_singleitemview.xml -->
+</RelativeLayout><!-- From: file:/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_singleitemview.xml -->

@@ -17,10 +17,10 @@ import com.parse.ParseUser;
  */
 public class AdminCreateGroupActivity extends Activity {
 
-    EditText groupName;
+    private EditText groupName;
     //EditText user1;
 
-    String groupNameString;
+    private String groupNameString;
     //String user1Name;
 
     @Override

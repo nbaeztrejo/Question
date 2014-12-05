@@ -13,22 +13,23 @@ import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 public class AdminCreateQuestionActivity extends Activity {
 
-    EditText titleText;
-    EditText choice1Text;
-    EditText choice2Text;
-    EditText choice3Text;
-    EditText choice4Text;
+    private EditText titleText;
+    private EditText choice1Text;
+    private EditText choice2Text;
+    private EditText choice3Text;
+    private EditText choice4Text;
 
-    String questionString;
-    String choice1;
-    String choice2;
-    String choice3;
-    String choice4;
+    private String questionString;
+    private String choice1;
+    private String choice2;
+    private String choice3;
+    private String choice4;
 
-    String groupID;
+    private String groupID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,7 @@ public class AdminCreateQuestionActivity extends Activity {
                 } else {
                     Question question = new Question();
 
-                    question.initialize(questionString);
+                    question.initialize(questionString, groupID, ParseUser.getCurrentUser().getObjectId());
 
                     question.addResponse(choice1);
                     question.addResponse(choice2);
@@ -78,24 +79,7 @@ public class AdminCreateQuestionActivity extends Activity {
 
                     question.saveInBackground();
 
-                    ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
-                            "Group");
-                    try {
-                        ParseObject group = query.get(groupID);
-                        group.add("questions", question);
-                        //group.add("questions", question.getObjectId);
-                        // The line above results in a NullPointerException
-                        // As it currently is, questions do not save for some reason
-                        group.saveInBackground();
-
-                    }
-                    catch (ParseException e) {
-                        Log.e("Error", e.getMessage());
-                        e.printStackTrace();
-                    }
-
-                    /*ParseQuery<Group> groupQuery = Group.getQuery();
-
+                    ParseQuery<Group> groupQuery = Group.getQuery();
                     try {
                         Group group = groupQuery.get(groupID);
                         group.addQuestion(question);
@@ -104,7 +88,7 @@ public class AdminCreateQuestionActivity extends Activity {
                     catch (ParseException e) {
                         Log.e("Error", e.getMessage());
                         e.printStackTrace();
-                    }*/
+                    }
 
                     Bundle b = new Bundle();
                     b.putString("groupID", groupID);

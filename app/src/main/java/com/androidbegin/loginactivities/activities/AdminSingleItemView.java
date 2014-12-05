@@ -23,13 +23,13 @@ import java.util.ArrayList;
 public class AdminSingleItemView extends Activity {
 
     //Close question button
-    Button closeQuestion;
-    Button submit;
-    RadioGroup rgOpinion;
-    RadioButton selectRadio;
-    int responseChoice = -1;
-    String opinion;
-    public int radioIndex;
+    private Button closeQuestion;
+    private Button submit;
+    private RadioGroup rgOpinion;
+    private RadioButton selectRadio;
+    private int responseChoice = -1;
+    private String opinion;
+    private int radioIndex;
     private String groupID;
 
 
@@ -57,6 +57,8 @@ public class AdminSingleItemView extends Activity {
             ((RadioButton) rgOpinion.getChildAt(i)).setText(array[i].toString());
         }
 
+        //admin should not have option to submit a response, just to close the question
+        /*
         // Submit Response Button
         submit = (Button) findViewById(R.id.submit);
 
@@ -133,7 +135,7 @@ public class AdminSingleItemView extends Activity {
                 }
             }
         });
-
+*/
 
         //get closeQuestion button
         closeQuestion = (Button) findViewById(R.id.closeQuestion);

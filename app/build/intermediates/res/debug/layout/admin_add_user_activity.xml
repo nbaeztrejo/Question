@@ -2,20 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".AddGroupActivity">
+    android:orientation="vertical">
 
     <EditText
-        android:id="@+id/groupText"
+        android:id="@+id/userText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColorHint="#ff33d6ff"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-        android:hint="Add Group" />
+        android:hint="Add User" />
 
     <Button
-        android:id="@+id/saveGroup"
+        android:id="@+id/saveUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm"
@@ -25,4 +24,4 @@
         android:textColor="#ff33d6ff"
         android:width="180dp" />
 
-</LinearLayout><!-- From: file:/C:/Users/Kevin/AndroidStudioProjects/Question/app/src/main/res/layout/add_group_activity.xml -->
+</LinearLayout><!-- From: file:/Users/Sara/Downloads/Question-Inviting_Users/app/src/main/res/layout/admin_add_user_activity.xml -->

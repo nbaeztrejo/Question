@@ -2,9 +2,9 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="C:\Users\Kevin\AndroidStudioProjects\Question\app\src\androidTest\res" />
-        <source path="C:\Users\Kevin\AndroidStudioProjects\Question\app\build\generated\res\rs\test\debug" />
-        <source path="C:\Users\Kevin\AndroidStudioProjects\Question\app\build\generated\res\generated\test\debug" />
+        <source path="/Users/Sara/Downloads/Question-Inviting_Users/app/src/androidTest/res" />
+        <source path="/Users/Sara/Downloads/Question-Inviting_Users/app/build/generated/res/rs/test/debug" />
+        <source path="/Users/Sara/Downloads/Question-Inviting_Users/app/build/generated/res/generated/test/debug" />
     </dataSet>
 
 </merger>

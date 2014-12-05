@@ -20,14 +20,14 @@ import java.util.List;
 
 
 public class NormalViewGroupActivity extends Activity {
-    ListView listView;
-    List<String> groupIDs;
-    List<ParseObject> groupObjects;
-    List<String> groupNames;
+    private ListView listView;
+    private List<String> groupIDs;
+    private List<ParseObject> groupObjects;
+    private List<String> groupNames;
 
-    ParseUser currentUser;
+    private ParseUser currentUser;
 
-    ProgressDialog mProgressDialog;
+    private ProgressDialog mProgressDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -107,15 +107,14 @@ public class NormalViewGroupActivity extends Activity {
                     // ListView Clicked item value
                     String  itemValue    = (String) listView.getItemAtPosition(position);
 
-                    // Get stuff from previous page using Bundle
+                    //get stuff from previous page using Bundle
                     Bundle b = new Bundle();
 
                     b.putString("groupID", groupIDs.get(itemPosition));
-                    b.putBoolean("isAdmin", false);
 
                     Intent i = new Intent(NormalViewGroupActivity.this,
                             //AdminQuestionListingActivity.class);
-                            GroupViewActivity.class);
+                            NormalQuestionListingActivity.class);
                     i.putExtras(b);
 
                     startActivity(i);

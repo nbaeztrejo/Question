@@ -93,20 +93,10 @@ public class NormalPastQuestionActivity extends Activity {
                 e.printStackTrace();
                 groupQuestionIDs = null;
             }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            // Locate the listview in generic_listview.xmlestion_activity.xml
-            listview = (ListView) findViewById(R.id.listview);
-            // Pass the results into an ArrayAdapter
-            //adapter = new ArrayAdapter<String>(CurrentQuestionActivity.this,
-            //        R.layout.listview_item);
 
             // Retrieve object "questionText" from Parse.com database
             for (String questionID : groupQuestionIDs) {
-                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
+                ParseQuery<ParseObject> questionQuery = new ParseQuery<ParseObject>(
                         "Question");
                 try {
                     ParseObject toBeAdded = query.get(questionID);
@@ -120,6 +110,16 @@ public class NormalPastQuestionActivity extends Activity {
                     e.printStackTrace();
                 }
             }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            // Locate the listview in generic_listview.xmlestion_activity.xml
+            listview = (ListView) findViewById(R.id.listview);
+            // Pass the results into an ArrayAdapter
+            //adapter = new ArrayAdapter<String>(CurrentQuestionActivity.this,
+            //        R.layout.listview_item);
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(NormalPastQuestionActivity.this,
                     R.layout.listview_item, groupQuestionStrings);
